@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Static_page</title><meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            Значение: <input type="number" required name="number" id = "number">
+        </div> 
+        <div>
+          <button id = "button">Send number</button>
+        </div><br>
+        <div id = "num_window" ></div>
+        <script>
+            document.querySelector("#button").onclick = async function(){
+                var num = document.getElementById("number").value;
+                var num_window = document.getElementById("num_window");
+                const url = 'http://web-app.obrol.com/web_app';
+                console.log(url);
+
+                var params = new URLSearchParams('number=' + num);
+
+                let response = await fetch(url, {
+                    method: 'POST',
+                    body: params
+                });
+
+                let result = await response.text();
+
+                num_window.textContent = result;
+            }
+        </script>
+    </body>
+</html>
