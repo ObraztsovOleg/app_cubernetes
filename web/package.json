@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node index.js"
   },
-  "engines": { "node": "15.14.0" },
+  "engines": {
+    "node": "15.14.0"
+  },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
