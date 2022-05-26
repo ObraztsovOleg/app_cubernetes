@@ -6,17 +6,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: obraztsov.hse.dc 
+    - host: obraztsov.hse.dc
       http:
         paths:
           - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: interface
-                port:
-                  number: 3000
-          - path: /web_app
             pathType: Prefix
             backend:
               service:

@@ -18,13 +18,13 @@ spec:
           ports: 
             - containerPort: 4321
           env:
-            - name: URL
+            - name: MONGO_URL
               value: mongodb://mongo:27017/dev
           imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
   name: web-app
 spec:
   selector:
@@ -32,3 +32,4 @@ spec:
   ports:
     - port: 3000
       targetPort: 4321
+  type: LoadBalancer

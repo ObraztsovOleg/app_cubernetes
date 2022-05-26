@@ -5,12 +5,14 @@ import appSrc from './app.js'
 import CORS from './CORS.js'
 import NumberModel from './models/Number.js'
 import bodyParser from 'body-parser'
+import process from 'process';
 
-const url = process.env.URL;
+const url = process.env.MONGO_URL;
+console.log(url);
 const Num = NumberModel(m);
 const app = appSrc(express, bodyParser, CORS, Num);
 
-const PORT = 3000;
+const PORT = 4321;
 
 try {
   await m.connect(url, {useNewUrlParser: true,

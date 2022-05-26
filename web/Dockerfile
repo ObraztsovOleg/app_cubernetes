@@ -7,5 +7,6 @@ RUN npm install -g nodemon
 RUN npm install mongoose
 RUN npm install express
 RUN npm install body-parser
+RUN npm install process
 
 CMD ["npm", "start"]
