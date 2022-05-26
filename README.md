@@ -5,4 +5,4 @@
 
 # Testing
 ### Example of the POST request:
-        for i in {0..10000}; do curl -0X POST -d "number=$i" http://obraztsov.hse.dc/; done
+        for i in {0..10000}; do curl -X POST -d "number=$i" http://obraztsov.hse.dc/; done
